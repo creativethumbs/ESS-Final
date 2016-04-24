@@ -1,6 +1,7 @@
 #include <Wire.h> // Enable this line if using Arduino Uno, Mega, etc.
 #include <elapsedMillis.h>
 
+
 // notes
 #define KC1     2
 #define KCS1    3
@@ -81,6 +82,7 @@ void loop() {
 
   if (Serial.available()) {
     int val = Serial.read();
+    Serial.println(val);
 
     // note on
     if (val < 25) {
@@ -107,30 +109,34 @@ void loop() {
 
     // note off
     else {
-      if (NotePlaying[val - 25]) {
-        NotePlaying[val - 25] = false;
+      int val2 = val-25;
+      
+      if (NotePlaying[val2]) {
+        NotePlaying[val2] = false;
 
-        if (val <= 20) {
-          digitalWrite((val - 25) + 2, LOW);
+        if (val2 <= 20) {
+          digitalWrite(val2 + 2, LOW);
         }
-        else if (val == 21) {
+        else if (val2 == 21) {
           digitalWrite(KA2, LOW);
         }
-        else if (val == 22) {
+        else if (val2 == 22) {
           digitalWrite(KAS2, LOW);
         }
-        else if (val == 23) {
+        else if (val2 == 23) {
           digitalWrite(KB2, LOW);
         }
-        else if (val == 24) {
+        else if (val2 == 24) {
           digitalWrite(KC3, LOW);
         }
       }
     }
   }
 
+
+  else { 
+  }
+
 }
-
-
 
 
