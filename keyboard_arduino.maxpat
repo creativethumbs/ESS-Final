@@ -43,7 +43,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 213.0, 108.0, 99.0, 20.0 ],
-					"presentation_rect" : [ 244.0, 86.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "9600 is the baud"
 				}
@@ -410,7 +409,7 @@
 					"outlettype" : [ "int", "" ],
 					"patching_rect" : [ 23.0, 114.0, 159.0, 22.0 ],
 					"style" : "",
-					"text" : "serial usbmodem1451 9600"
+					"text" : "serial usbmodem1421 9600"
 				}
 
 			}
